@@ -1,0 +1,283 @@
+@keyframes animation {
+  from {background: rgba($color: #778028, $alpha: 0)} to {background: rgba($color: #778028, $alpha: 1)}
+}
+
+@keyframes boxAnimation {
+  from {opacity: 0;} to {opacity: 1;}
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+li, p{
+    color: #ebebdd;
+}
+
+h1{
+    color: #000;
+    font-weight: 500;
+  }
+
+h2{
+    color: #ebebdd;
+    font-weight: 500;
+}
+
+
+
+
+
+.background{
+ 
+  /* Set rules to fill background */
+  min-height: 100%;
+  min-width: 1024px;
+	
+  /* Set up proportionate scaling */
+  width: 100%;
+  height: auto;
+	
+  /* Set up positioning */
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.headline{
+  display: grid;
+  justify-content: center;
+  padding: 2rem 0 2rem 0;
+  background: #fff;
+}
+
+
+.navbarWrapper{
+  box-shadow: inset 0px 0px 21px 3px rgba(0,0,0,0.5);
+  width: 100%;
+  background: rgba($color: #0c0c0d, $alpha: 0.7);
+  ul{
+    margin: 0 8rem 0 8rem;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    .item1{
+      justify-self: start;
+    }
+    .item3{
+      justify-self: end;
+    }
+    
+    li{
+      margin: 1rem 0 1rem 0;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      p{
+        margin: 0 0 0.5rem 0;
+      }
+      span{   
+        padding: 2px 0 2px 0;
+        width: 20px;
+        display: block;     
+      }     
+    }
+
+    li:hover{
+      p{color: #778028;}   
+    }
+
+    .selected span{
+      animation-name: animation;
+      
+      animation-duration: 850ms;
+      animation-fill-mode: forwards;
+      
+    }
+  }
+}
+
+.descriptionWrapper{ 
+  opacity: 0;
+  animation: boxAnimation 3000ms ease-in-out 0.5s forwards;
+  margin: 0 8rem 0 8rem;
+  padding: 10rem 0 15rem 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center; 
+  h2{
+    text-align: center;
+  }
+}
+
+  
+.menuBox{
+  opacity: 0;
+  animation: boxAnimation 3000ms ease-in-out 0.5s forwards;
+  padding: 10rem 0 15rem 0;
+  margin: 0 8rem 0 8rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0 12rem;
+  .column{
+    display: flex;
+    flex-direction: column;
+    .title{
+      margin-top: 2rem;
+    }
+    .dish{
+      display: flex;
+      justify-content: space-between;
+      margin: 0.5rem 0 0.5rem 0;
+    }
+  }
+
+}
+
+.contactBox{
+  opacity: 0;
+  animation: boxAnimation 3000ms ease-in-out 0.5s forwards;
+  padding: 10rem 0 15rem 0;
+  margin: 0 15rem 0 15rem;
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  .contactUs{
+    justify-self: start;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    
+    div{
+      display: flex;
+      align-items: center;
+      margin: 0.5rem 0 0.5rem 0;
+      cursor: pointer;
+      span{
+        color: #ebebdd;
+        margin-left: 1rem;
+      }
+    }
+
+  }
+  .social{
+    justify-self: end;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    
+    img{
+      margin-left: 2rem;
+      cursor: pointer;
+    }
+  }
+}
+
+.footer{
+  display: grid;
+  justify-content: center;
+  margin: 1rem 0 1rem 0;
+}
+
+
+@media (max-width: 1100px){
+  .contactBox{  
+    margin: 0 8rem 0 8rem;
+  }
+}
+  
+
+@media (max-width: 899px){
+  .descriptionWrapper{
+    padding: 4rem 0 4rem 0;
+  }
+
+  .navbarWrapper{
+    ul{
+      grid-template-columns: 1fr;
+      margin: 0 0 0 0;
+      .item1{
+        justify-self: center;
+      }
+      .item3{
+        justify-self: center;
+      }
+    }
+  }
+
+  .menuBox{
+    padding: 4rem 0 4rem 0;
+    margin: 0 0 0 0;
+    grid-template-columns: 1fr;
+    gap: 0 0;
+    .column{
+      justify-content: center;
+      align-items: center;
+      .dish{
+        justify-content: center;
+        p{
+          padding: 0 1.5rem 0 1.5rem;
+        }
+      }
+    }
+  }
+
+  .contactBox{
+    padding: 4rem 0 4rem 0;
+    margin: 0 0 0 0;
+    grid-template-columns: 1fr;
+    .contactUs{
+      justify-self: center;
+      justify-content: center;
+    
+      div{
+        align-items: center;
+        flex-direction: column;
+        margin: 1rem 0 1rem 0;
+        span{
+          color: #ebebdd;
+          margin-left: 0;
+          margin-top: 0.5rem;
+        }
+      }
+
+    }
+    .social{
+      margin-top: 4rem;
+      justify-self: center;
+      align-items: center;
+      justify-content: center;
+    
+      img{
+        margin-left: 0rem;
+        margin: 0 2rem 0 2rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 680px){
+  .descriptionWrapper{
+    margin: 0 2.5rem 0 2.5rem;
+  }
+
+  .contactBox{
+    .social{
+      img{
+        margin: 0 1rem 0 1rem;
+      }
+    }
+  }
+
+}
