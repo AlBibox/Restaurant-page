@@ -5,13 +5,13 @@ function createContactUsBox(){
         const icon = document.createElement("img");
         const text = document.createElement("span");
         if(i == 0){
-            icon.src = "/dist/IMG/email.png";
+            icon.src = "./IMG/email.png";
             text.textContent = "mail@host.com";
         }else if(i == 1){
-            icon.src = "/dist/IMG/phone.png";
+            icon.src = "./IMG/phone.png";
             text.textContent = "+00 000 0000000";
         }else{
-            icon.src = "/dist/IMG/geo.png";
+            icon.src = "./IMG/geo.png";
             text.textContent = "Black Hole 34, Universe";
         }
         field.append(icon, text);
@@ -26,11 +26,11 @@ function createSocialBox(){
     for (let i = 0; i < 3; i++){
         const icon = document.createElement("img");
         if(i == 0){
-            icon.src = "/dist/IMG/tripadvisor.png";
+            icon.src = "./IMG/tripadvisor.png";
         }else if(i == 1){
-            icon.src = "/dist/IMG/facebook.png";
+            icon.src = "./IMG/facebook.png";
         }else{
-            icon.src = "/dist/IMG/instagram.png";
+            icon.src = "./IMG/instagram.png";
         }
         social.appendChild(icon);
     }
